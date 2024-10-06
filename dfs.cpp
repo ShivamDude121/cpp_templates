@@ -13,7 +13,7 @@
     }
     
     
-    vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+    vector<int> dfsOfGraph(int V, vector<int> adj[]) {
         
         vector<int> ans;
         vector<bool> vis(V+1,false);
