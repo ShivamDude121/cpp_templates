@@ -1,11 +1,23 @@
- void dfs(int node, vector<int> adj[], int vis[]) {
-        vis[node] = 1; 
-        cout<<node<<" "; 
-        // traverse all its neighbours
-        for(auto it : adj[node]) {
-            // if the neighbour is not visited
-            if(!vis[it]) {
-                dfs(it, adj, vis); 
-            }
+
+    void dfs(vector<int> adj[],vector<bool>& vis,int node,vector<int>& ans){
+        
+        vis[node]=1;
+        ans.push_back(node);
+        
+        for(auto i : adj[node]){
+            if(!vis[i])
+            dfs(adj,vis,i,ans);
         }
+        
+        
+    }
+    
+    
+    vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+        
+        vector<int> ans;
+        vector<bool> vis(V+1,false);
+        dfs(adj,vis,0,ans);
+        return ans;
+        // Code here
     }
